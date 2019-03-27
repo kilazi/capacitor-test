@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Plugins } from '@capacitor/core';
+import { Plugins, CameraResultType } from '@capacitor/core';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +18,7 @@ export class HomePage {
 
         Camera.getPhoto({
             quality: 100,
-            resultType: 'base64'
+            resultType: CameraResultType.Base64
         }).then((result) => {
             console.log(result);
         }).catch((err) => {
